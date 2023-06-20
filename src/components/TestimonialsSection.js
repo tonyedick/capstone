@@ -5,6 +5,7 @@ import CustomScroll from './CustomScroll';
 const TestimonialsSection = () => {
   return (
     <>
+    <section id="testimonials">
       <Container fluid className="testimonialBanner p-0">
         <div>
           <Container className="testimonial">
@@ -20,6 +21,7 @@ const TestimonialsSection = () => {
           </Container>
         </div>
       </Container>
+      </section>
     </>
   );
 };

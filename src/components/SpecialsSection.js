@@ -49,6 +49,7 @@ const SpecialsSection = () => {
 
   return (
     <>
+        <section id="menu">
             <Container id="menu">
                 <Row>
                     <Col lg={12} md={12} sm={12}>
@@ -133,6 +134,7 @@ const SpecialsSection = () => {
                     </Col>
                 </Row>
             </Container>
+        </section>
     </>
   );
 };

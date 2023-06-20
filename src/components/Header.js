@@ -40,77 +40,79 @@ const Header = (props) => {
   return (
     <>
       <title>{props.title}</title>
-      <Navbar role="region" className="navbar" collapseOnSelect fixed="top" expand="lg" variant="dark" style={{ backgroundColor:"#ffffff"}}>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{ backgroundColor:"#495E57"}} />
-            <Navbar.Brand className="px-5" href="/">
-                <img className="logoImg" src={logo} alt="logo"/>
-            </Navbar.Brand>
-            <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav className="justify-content-center"></Nav>
-              <Nav>
-                <NavLink className="navItem text-uppercase px-3" 
-                  style={({ isActive }) => {
-                    return {
-                      color: isActive ? "#495E57" : "#000000",
-                    };
-                  }}
-                  onClick={handleClick("/")}
-                  to="/">
-                  Home
-                </NavLink>
-                <NavLink className="navItem text-uppercase px-3" 
-                  style={({ isActive }) => {
-                    return {
-                      color: isActive ? "#495E57" : "#000000",
-                    };
-                  }}
-                  onClick={handleClick("about")}
-                  to="/#about">
-                  About
-                </NavLink>
-                <NavLink className="navItem text-uppercase px-3" 
-                  style={({ isActive }) => {
-                    return {
-                      color: isActive ? "#495E57" : "#000000",
-                    };
-                  }}
-                  onClick={handleClick("menu")}
-                  to="/#menu">
-                  Menu
-                </NavLink>
-                <NavLink className="navItem text-uppercase px-3" 
-                  style={({ isActive }) => {
-                    return {
-                      color: isActive ? "#495E57" : "#000000",
-                    };
-                  }}
-                  to="/not-found">
-                  Reservations
-                </NavLink>
-                <NavLink className="navItem text-uppercase px-3" 
-                  style={({ isActive }) => {
-                    return {
-                      color: isActive ? "#495E57" : "#000000",
-                    };
-                  }}
-                  to="/booking-page">
-                  Order Online
-                </NavLink>
-                <NavLink className="navItem text-uppercase px-3" 
-                  style={({ isActive }) => {
-                    return {
-                      color: isActive ? "#495E57" : "#000000",
-                    };
-                  }}
-                  to="/not-found">
-                  Login
-                </NavLink>
-              </Nav>
-            </Navbar.Collapse>
-            <Navbar.Brand href="/">
-              <img src={basket} alt="cart" />
-            </Navbar.Brand>
-      </Navbar>
+      <section id="header">
+        <Navbar role="region" className="navbar" collapseOnSelect fixed="top" expand="lg" variant="dark" style={{ backgroundColor:"#ffffff"}}>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{ backgroundColor:"#495E57"}} />
+              <Navbar.Brand className="px-5" href="/">
+                  <img className="logoImg" src={logo} alt="logo"/>
+              </Navbar.Brand>
+              <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="justify-content-center"></Nav>
+                <Nav>
+                  <NavLink className="navItem text-uppercase px-3" 
+                    style={({ isActive }) => {
+                      return {
+                        color: isActive ? "#495E57" : "#000000",
+                      };
+                    }}
+                    onClick={handleClick("/")}
+                    to="/">
+                    Home
+                  </NavLink>
+                  <NavLink className="navItem text-uppercase px-3" 
+                    style={({ isActive }) => {
+                      return {
+                        color: isActive ? "#495E57" : "#000000",
+                      };
+                    }}
+                    onClick={handleClick("about")}
+                    to="/#about">
+                    About
+                  </NavLink>
+                  <NavLink className="navItem text-uppercase px-3" 
+                    style={({ isActive }) => {
+                      return {
+                        color: isActive ? "#495E57" : "#000000",
+                      };
+                    }}
+                    onClick={handleClick("menu")}
+                    to="/#menu">
+                    Menu
+                  </NavLink>
+                  <NavLink className="navItem text-uppercase px-3" 
+                    style={({ isActive }) => {
+                      return {
+                        color: isActive ? "#495E57" : "#000000",
+                      };
+                    }}
+                    to="/not-found">
+                    Reservations
+                  </NavLink>
+                  <NavLink className="navItem text-uppercase px-3" 
+                    style={({ isActive }) => {
+                      return {
+                        color: isActive ? "#495E57" : "#000000",
+                      };
+                    }}
+                    to="/booking-page">
+                    Order Online
+                  </NavLink>
+                  <NavLink className="navItem text-uppercase px-3" 
+                    style={({ isActive }) => {
+                      return {
+                        color: isActive ? "#495E57" : "#000000",
+                      };
+                    }}
+                    to="/not-found">
+                    Login
+                  </NavLink>
+                </Nav>
+              </Navbar.Collapse>
+              <Navbar.Brand href="/">
+                <img src={basket} alt="cart" />
+              </Navbar.Brand>
+        </Navbar>
+      </section>
     </>
   );
 };

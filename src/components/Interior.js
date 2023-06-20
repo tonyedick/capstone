@@ -4,6 +4,7 @@ import { Container, Row } from 'react-bootstrap';
 const Interior = () => {
   return (
     <>
+    <section id="interior">
       <Container fluid className="interiorBanner p-0">
       <div>
           <Container>
@@ -15,6 +16,7 @@ const Interior = () => {
           </Container>
         </div>
       </Container>
+      </section>
     </>
   );
 };

@@ -33,6 +33,7 @@ const Footer = () => {
 
   return (
     <>
+     <section id="footer">
       <Container fluid className="footerFixedBanner p-0">
         <div>
           <Container>
@@ -102,6 +103,7 @@ const Footer = () => {
           </Container>
         </div>
       </Container>
+      </section>
     </>
   );
 };
