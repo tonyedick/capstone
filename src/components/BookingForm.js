@@ -25,6 +25,7 @@ const BookingForm = (props) => {
       resDate: '',
       resTime: '',
       guests: '1',
+      location: '',
       occasion: '',
     },
     onSubmit: (values) => {
@@ -39,6 +40,7 @@ const BookingForm = (props) => {
       guests: Yup.number()
         .min(2, "Must be at least 2 guests")
         .required('Required'),
+      location: Yup.string().required('Required'),
       occasion: Yup.string().required('Required'),
     }),
   });
@@ -47,6 +49,7 @@ const BookingForm = (props) => {
   const resLastNameProps = formik.getFieldProps('resLastName');
   const resDateProps = formik.getFieldProps('resDate');
   const resTimeProps = formik.getFieldProps('resTime');
+  const locationProps = formik.getFieldProps('location');
   const occasionProps = formik.getFieldProps('occasion');
 
   const handleDateChange = (e) => {
@@ -143,6 +146,24 @@ const BookingForm = (props) => {
                 </NumberInput>
                 <FormErrorMessage>{formik.errors.guests}</FormErrorMessage>
               </FormControl>
+              <FormControl isInvalid={formik.touched.location && !!formik.errors.location}>
+                <br />
+                <FormLabel htmlFor="location">Location</FormLabel>
+                <Select
+                  id="location"
+                  name="location"
+                  value={formik.values.location}
+                  onChange={(event) => {
+                    formik.handleChange(event); 
+                  }}
+                  {...locationProps}
+                >
+                  <option value="Select">Indoor/Outdoor</option>
+                  <option value="Indoor">Indoor</option>
+                  <option value="Outdoor">Outdoor</option>
+                </Select> 
+                <FormErrorMessage>{formik.errors.location}</FormErrorMessage>
+              </FormControl>
               <FormControl isInvalid={formik.touched.occasion && !!formik.errors.occasion}>
                 <br />
                 <FormLabel htmlFor="occasion">Occasion</FormLabel>
@@ -150,9 +171,14 @@ const BookingForm = (props) => {
                   id="occasion"
                   name="occasion"
                   value={formik.values.occasion}
-                  onChange={formik.handleChange}
+                  onChange={(event) => {
+                    formik.handleChange(event); 
+                    event.target.style.backgroundColor = "#495E57";
+                  }}
                   {...occasionProps}
+                  style={{ backgroundColor: "#EDEFEE" }}
                 >
+                  <option value="Choose">Select Occasion</option>
                   <option value="Birthday">Birthday</option>
                   <option value="Anniversary">Anniversary</option>
                   <option value="Others">Others</option>
